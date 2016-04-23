@@ -13,7 +13,9 @@ var api = require('./app/api.js')
 // routes to api
 app.use('/api',api);
 app.use(express.static(__dirname + '/public'));
-
+app.get('*', function(req,res) {
+	res.sendFile(__dirname + '/public/app/views/index.html')
+});
 app.listen(config.port, function(err) {
 	if (err) {
 		console.log(err);

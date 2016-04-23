@@ -1,0 +1,14 @@
+<div class="container" ng-controller="MainController as login">
+    <div class="row">
+        <div class="col-sm-6 col-md-4 col-md-offset-4">
+
+    <form class="form-signin" method="post" class="form-control" ng-submit="login.doLogin()">
+        Origin: <input type="text" name="username" class="form-control" ng-model="login.loginData.username">
+
+        Destination: <input type="text"  name="password" class="form-control" ng-model="login.loginData.password">
+        
+        <button type="submit" class="btn btn-success"> Login </button>
+    </form>
+        </div>
+    </div>
+</div>
