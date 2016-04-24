@@ -1,18 +1,35 @@
 <div class="container" ng-controller="MainController as login">
     <div class="page-header">
-        <h3 style="text-align: center;"> Flight leaving from {{login.loginData.username}} and travling to{{login.loginData.password}} </h3>
+        <h3 style="text-align: center;"> <p> Flight information between {{city1.name}} and {{city2.name}}  </p> </h3>
     </div>
     <div class="row grid-divider">
     <div class="col-sm-7">
       <div class="col-padding">
-        <h3>Orgin</h3>
-        <p> {{city1}} </p>
+        <h3> {{city1.name}} </h3> <p>
+        <b> {{city1.desc[0].main}} </b>: {{city1.desc[0].description}} <br>
+        <b> Temperature </b>: {{city1.temp.temp}}&deg <br>
+        <b> Pressure </b>: {{city1.temp.pressure}} hpa <br>
+        <b> Humidity </b>: {{city1.temp.humidity}}%  <br>
+        <b> Wind Speed </b>: {{city1.wind.speed}} m/s<br>
+        <b> Wind Degree </b>: {{city1.wind.deg}}%   <br>
+        <b> Latitude: </b> {{city1.coord.lon}} <b> Longitude: </b> {{city1.coord.lon}} <br> 
+        <b> City </b>: {{city1.name}} 
+      </p>
       </div>
     </div>
     <div class="col-sm-7">
       <div class="col-padding">
-        <h3> Destination </h3>
-        <p> {{city2}} </p>
+        <h3>  {{city2.name}} </h3>
+        <p> 
+<b> {{city2.desc[0].main}} </b>: {{city2.desc[0].description}} <br>
+        <b> Temperature </b>: {{city2.temp.temp}}&deg <br>
+        <b> Pressure </b>: {{city2.temp.pressure}} hpa <br>
+        <b> Humidity </b>: {{city2.temp.humidity}}%  <br>
+        <b> Wind Speed </b>: {{city2.wind.speed}} m/s<br>
+        <b> Wind Degree </b>: {{city2.wind.deg}}%   <br>
+        <b> Latitude: </b> {{city2.coord.lon}} <b> Longitude: </b> {{city2.coord.lon}} <br> 
+        <b> City </b>: {{city2.name}} <br><br><br><br><br><br>
+         </p>
       </div>
     </div>
     <div>

@@ -21,6 +21,7 @@ api.get('/weather', function(req,res) {
   request(openweather_url)
     .then(function (resp) {
       resp = JSON.parse(resp);
+      console.log(resp);
       response[city1] = {};
       response[city1].coord = resp.coord;
       response[city1].desc = resp.weather;
@@ -29,6 +30,9 @@ api.get('/weather', function(req,res) {
       response[city1].temp.temp = Math.round((response[city1].temp.temp - 273) * 10) / 10;
       response[city1].pressure = resp.main;
       response[city1].humidity = resp.main;
+      response[city1].wind = resp.wind;
+      response[city1].name = resp.name;
+
     }).then(function(resp) {
         return request(openweather_url2);
       })
@@ -43,6 +47,9 @@ api.get('/weather', function(req,res) {
       response[city2].temp.temp = Math.round((response[city2].temp.temp - 273) * 10) / 10;
       response[city2].pressure = resp.main;
       response[city2].humidity = resp.main;
+      response[city2].wind = resp.wind;
+      response[city2].name = resp.name;
+
       res.send(response);
     })
 
