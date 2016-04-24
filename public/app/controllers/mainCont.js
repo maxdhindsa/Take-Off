@@ -14,6 +14,11 @@ angular.module('mainCtrl', [])
                     vm.processing = false;
                     $rootScope.city1 = (data[Object.keys(data)[0]]);
                     $rootScope.city2 = (data[Object.keys(data)[1]]);
+                    if (data.delay) {
+                        $rootScope.delayed = "DELAY EXPECTED";
+                    }
+                    else $rootScope.delayed = "NO DELAY";
+
                     $location.path('/result');
             })
         }

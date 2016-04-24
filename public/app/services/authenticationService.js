@@ -4,7 +4,7 @@ angular.module('authenticationService', [])
 
         authFactory.login =  function(username, password) {
             console.log('login');
-                                console.log(username);
+                    console.log(username);
                     console.log("password");
 
             return $http({
